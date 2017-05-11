@@ -11,6 +11,6 @@ ARG VERSION
 ENV VERSION ${VERSION:-$SOURCE_BRANCH}
 
 # inspired by https://github.com/christian-blades-cb/aglio-docker
-RUN apk -U add nodejs g++ make python; npm install -g aglio@$SOURCE_BRANCH; apk del g++ make python
+RUN apk -U add nodejs g++ make python; npm install -g aglio@$VERSION; apk del g++ make python
 
 ENTRYPOINT ["aglio"]
